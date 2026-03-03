@@ -29,6 +29,25 @@ class AuthEntryScreen extends StatelessWidget {
                   )
                 ),
               ),
+              SizedBox(height: 20),
+
+              // Welcome Text Section
+              ShaderMask( shaderCallback: (bounds) => const LinearGradient(
+                colors: [ Colors.orangeAccent, Colors.blue],
+              ).createShader(
+                bounds
+              ),
+                child: const Text(
+                  'Event App',
+                  style: TextStyle(
+                    fontSize: 48,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    letterSpacing: 2,
+                  ),
+                ),
+              ),
+              const Spacer(flex: 2),
             ],
           ),
         ),
