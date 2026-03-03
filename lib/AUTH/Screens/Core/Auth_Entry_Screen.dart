@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nexus/AUTH/Screens/Email/Login_Register_Screen.dart';
 
 class AuthEntryScreen extends StatelessWidget {
   const AuthEntryScreen({super.key});
@@ -9,7 +10,7 @@ class AuthEntryScreen extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: const [Colors.blue, Color(0xFFFF8800)],
+            colors: const [Colors.blue, Colors.orange],
           ),
         ),
         child: SafeArea(
@@ -47,8 +48,49 @@ class AuthEntryScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const Spacer(flex: 2),
-            ],
+              const Spacer(flex: 3),
+
+              // Bottom Button
+              Padding(
+  padding: const EdgeInsets.symmetric(horizontal: 24.0),
+  child: Column(
+    children: [
+      Container(
+        width: double.infinity,
+        height: 56,
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [Colors.orange, Colors.blue],
+          ),
+          borderRadius: BorderRadius.circular(28),
+         
+        ),
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: () => LoginRegisterScreen(),
+            // (context, isLogin: true),
+            borderRadius: BorderRadius.circular(28),
+            child: const Center(
+              child: Text(
+                'Get Started',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF2C1810),
+                  letterSpacing: 0.5,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+      const SizedBox(height: 40),
+    ],
+  ),
+),
+  
+            ]
           ),
         ),
       ),
