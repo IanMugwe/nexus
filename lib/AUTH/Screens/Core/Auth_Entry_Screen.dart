@@ -72,6 +72,7 @@ class AuthEntryScreen extends StatelessWidget {
                                     MediaQuery.of(context).size.height *
                                     0.75, // 75% height
                                 child: LoginRegisterScreen(
+                                  isLogin: true,
                                 ), // your extracted sheet
                               ),
                             );
