@@ -16,7 +16,6 @@ class AuthEntryScreen extends StatelessWidget {
           child: Column(
             children: [
               const Spacer(flex: 2),
-
               // Logo Section
               Center(
                 child: Container(
@@ -24,11 +23,10 @@ class AuthEntryScreen extends StatelessWidget {
                   height: 200,
                   decoration: BoxDecoration(),
                   //Add your logo
-                  child: const Icon(
-                    Icons.person,
-                    size: 200,
-                    color: Colors.black,
-                  ),
+                  child: Image.asset(
+                    'lib/assets/logo.png',
+                    fit: BoxFit.cover,
+                  )
                 ),
               ),
             ],
