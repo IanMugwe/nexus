@@ -9,9 +9,7 @@ class AuthEntryScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: const [Colors.blue, Colors.orange],
-          ),
+          gradient: LinearGradient(colors: const [Colors.blue, Colors.orange]),
         ),
         child: SafeArea(
           child: Column(
@@ -24,20 +22,16 @@ class AuthEntryScreen extends StatelessWidget {
                   height: 200,
                   decoration: BoxDecoration(),
                   //Add your logo
-                  child: Image.asset(
-                    'lib/assets/logo.png',
-                    fit: BoxFit.cover,
-                  )
+                  child: Image.asset('lib/assets/logo.png', fit: BoxFit.cover),
                 ),
               ),
               SizedBox(height: 20),
 
               // Welcome Text Section
-              ShaderMask( shaderCallback: (bounds) => const LinearGradient(
-                colors: [ Colors.orangeAccent, Colors.blue],
-              ).createShader(
-                bounds
-              ),
+              ShaderMask(
+                shaderCallback: (bounds) => const LinearGradient(
+                  colors: [Colors.orangeAccent, Colors.blue],
+                ).createShader(bounds),
                 child: const Text(
                   'Event App',
                   style: TextStyle(
@@ -52,45 +46,56 @@ class AuthEntryScreen extends StatelessWidget {
 
               // Bottom Button
               Padding(
-  padding: const EdgeInsets.symmetric(horizontal: 24.0),
-  child: Column(
-    children: [
-      Container(
-        width: double.infinity,
-        height: 56,
-        decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            colors: [Colors.orange, Colors.blue],
-          ),
-          borderRadius: BorderRadius.circular(28),
-         
-        ),
-        child: Material(
-          color: Colors.transparent,
-          child: InkWell(
-            onTap: () => LoginRegisterScreen(),
-            // (context, isLogin: true),
-            borderRadius: BorderRadius.circular(28),
-            child: const Center(
-              child: Text(
-                'Get Started',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFF2C1810),
-                  letterSpacing: 0.5,
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: Column(
+                  children: [
+                    Container(
+                      width: double.infinity,
+                      height: 56,
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [Colors.orange, Colors.blue],
+                        ),
+                        borderRadius: BorderRadius.circular(28),
+                      ),
+                      child: Material(
+                        color: const Color.fromRGBO(0, 0, 0, 0),
+                        child: InkWell(
+                          onTap: () {
+                            showModalBottomSheet(
+                              context: context,
+                              isScrollControlled: true,
+                              backgroundColor:
+                                  Colors.transparent, // allows rounded corners
+                              builder: (context) => SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height *
+                                    0.75, // 75% height
+                                child: LoginRegisterScreen(
+                                ), // your extracted sheet
+                              ),
+                            );
+                          },
+                          borderRadius: BorderRadius.circular(28),
+                          child: const Center(
+                            child: Text(
+                              'Get Started',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xFF2C1810),
+                                letterSpacing: 0.5,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 40),
+                  ],
                 ),
               ),
-            ),
-          ),
-        ),
-      ),
-      const SizedBox(height: 40),
-    ],
-  ),
-),
-  
-            ]
+            ],
           ),
         ),
       ),
