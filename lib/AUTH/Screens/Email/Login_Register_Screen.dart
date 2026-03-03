@@ -102,6 +102,8 @@ class _LoginRegisterScreenState extends State<LoginRegisterScreen>
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
+                  indicatorColor: Colors.transparent,
+                  dividerColor: Colors.transparent,
                   tabs: const [
                     Tab(text: 'Login'),
                     Tab(text: 'Sign Up'),
