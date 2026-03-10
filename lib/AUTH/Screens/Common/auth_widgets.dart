@@ -25,9 +25,11 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Container(
       decoration: BoxDecoration(
-        color: Colors.black.withOpacity(0.2),
+        color: colorScheme.surface.withOpacity(0.06),
         borderRadius: BorderRadius.circular(28),
         border: Border.all(
           color: const Color(0xFF5C4A2A),
@@ -38,8 +40,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
         controller: widget.controller,
         obscureText: widget.isPassword && _obscureText,
         keyboardType: widget.keyboardType,
-        style: const TextStyle(
-          color: Color(0xFFE5D5B7),
+        style: TextStyle(
+          color: colorScheme.onSurface,
           fontSize: 15,
         ),
         decoration: InputDecoration(
@@ -112,6 +114,8 @@ class CustomCheckbox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return GestureDetector(
       onTap: () => onChanged(!value),
       child: Container(
@@ -149,14 +153,16 @@ class PrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Container(
       width: double.infinity,
       height: 56,
       decoration: BoxDecoration(
-        gradient: const LinearGradient(
+        gradient: LinearGradient(
           colors: [
-            Color(0xFFFFB800),
-            Color(0xFFFF8800),
+            colorScheme.primary,
+            colorScheme.secondary,
           ],
         ),
         borderRadius: BorderRadius.circular(28),

@@ -11,11 +11,11 @@ class AccountLockedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
     final resolvedReason = reason ??
         'For your security, we\'ve temporarily locked your account after several unsuccessful attempts.';
 
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -29,7 +29,7 @@ class AccountLockedScreen extends StatelessWidget {
                   height: 120,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.orange.withOpacity(0.08),
+                    color: colorScheme.secondary.withOpacity(0.08),
                   ),
                   child: const Icon(
                     Icons.lock_outline,
@@ -41,7 +41,7 @@ class AccountLockedScreen extends StatelessWidget {
                 Text(
                   'Account locked',
                   style: TextStyle(
-                    color: Colors.blue.shade700,
+                    color: colorScheme.primary,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),

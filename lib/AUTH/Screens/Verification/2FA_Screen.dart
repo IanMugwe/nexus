@@ -32,7 +32,6 @@ class _TwoFAScreenState extends State<TwoFAScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(

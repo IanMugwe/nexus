@@ -14,10 +14,11 @@ class _BiometricEnrollmentScreenState extends State<BiometricEnrollmentScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: colorScheme.background,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
@@ -45,13 +46,13 @@ class _BiometricEnrollmentScreenState extends State<BiometricEnrollmentScreen> {
                     width: 120,
                     height: 120,
                     decoration: BoxDecoration(
-                      color: Colors.blue.withOpacity(0.08),
+                      color: colorScheme.primary.withOpacity(0.08),
                       shape: BoxShape.circle,
                     ),
                     child: Icon(
                       Icons.fingerprint,
                       size: 70,
-                      color: Colors.blue.shade700,
+                      color: colorScheme.primary,
                     ),
                   ),
                 ),
@@ -59,7 +60,7 @@ class _BiometricEnrollmentScreenState extends State<BiometricEnrollmentScreen> {
                 Text(
                   'Enable quick, secure access',
                   style: TextStyle(
-                    color: Colors.blue.shade700,
+                    color: colorScheme.primary,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),

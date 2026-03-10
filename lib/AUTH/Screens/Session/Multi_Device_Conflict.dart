@@ -6,10 +6,11 @@ class MultiDeviceConflictScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: colorScheme.background,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.close, color: Colors.black),
@@ -30,7 +31,7 @@ class MultiDeviceConflictScreen extends StatelessWidget {
                       width: 48,
                       height: 48,
                       decoration: BoxDecoration(
-                        color: Colors.orange.withOpacity(0.1),
+                        color: colorScheme.secondary.withOpacity(0.1),
                         shape: BoxShape.circle,
                       ),
                       child: const Icon(
@@ -42,7 +43,7 @@ class MultiDeviceConflictScreen extends StatelessWidget {
                     Text(
                       'Multiple devices detected',
                       style: TextStyle(
-                        color: Colors.blue.shade700,
+                        color: colorScheme.primary,
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                       ),

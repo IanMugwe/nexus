@@ -6,10 +6,17 @@ class AuthEntryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(colors: const [Colors.blue, Colors.orange]),
+          gradient: LinearGradient(
+            colors: [
+              colorScheme.primary,
+              colorScheme.secondary,
+            ],
+          ),
         ),
         child: SafeArea(
           child: Column(

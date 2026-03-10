@@ -11,13 +11,13 @@ class BiometricPromptScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
     final description = reason ??
         'Confirm it’s really you using Face ID or your fingerprint.';
 
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: colorScheme.background,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.close, color: Colors.black),
@@ -39,22 +39,22 @@ class BiometricPromptScreen extends StatelessWidget {
                     shape: BoxShape.circle,
                     gradient: LinearGradient(
                       colors: [
-                        Colors.blue.withOpacity(0.1),
-                        Colors.orange.withOpacity(0.1),
+                        colorScheme.primary.withOpacity(0.1),
+                        colorScheme.secondary.withOpacity(0.1),
                       ],
                     ),
                   ),
                   child: Icon(
                     Icons.fingerprint,
                     size: 80,
-                    color: Colors.blue.shade700,
+                    color: colorScheme.primary,
                   ),
                 ),
                 const SizedBox(height: 32),
                 Text(
                   'Confirm your identity',
                   style: TextStyle(
-                    color: Colors.blue.shade700,
+                    color: colorScheme.primary,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),

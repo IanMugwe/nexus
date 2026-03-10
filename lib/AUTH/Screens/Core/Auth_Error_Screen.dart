@@ -13,12 +13,12 @@ class AuthErrorScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
     final resolvedTitle = title ?? 'Something went wrong';
     final resolvedMessage = message ??
         'We could not complete your request right now. Please try again in a moment.';
 
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SafeArea(
         child: Center(
           child: Padding(
@@ -32,7 +32,7 @@ class AuthErrorScreen extends StatelessWidget {
                   height: 96,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.red.withOpacity(0.08),
+                    color: colorScheme.error.withOpacity(0.08),
                   ),
                   child: const Icon(
                     Icons.error_outline,
@@ -45,7 +45,7 @@ class AuthErrorScreen extends StatelessWidget {
                   resolvedTitle,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.blue.shade700,
+                    color: colorScheme.primary,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
