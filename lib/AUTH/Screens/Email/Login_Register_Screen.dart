@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nexus/AUTH/Screens/Common/auth_widgets.dart';
 import 'package:nexus/AUTH/Screens/Email/Forgot_Password.dart';
+import 'package:nexus/AUTH/Screens/Biometric/Biometric_Enrollment.dart';
+import 'package:nexus/AUTH/Screens/Biometric/Biometric_Prompt.dart';
+import 'package:nexus/AUTH/Screens/OAuth/OAuth_Screen.dart';
+import 'package:nexus/AUTH/Screens/Verification/2FA_Screen.dart';
 
 class LoginRegisterScreen extends StatefulWidget {
   final bool isLogin;
@@ -235,16 +239,73 @@ class _LoginRegisterScreenState extends State<LoginRegisterScreen>
             text: _isLogin ? 'Log In' : 'Sign Up',
             onPressed: () {
               if (_isLogin) {
-                // Handle login
+                // Example: navigate to 2FA screen after login
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => TwoFAScreen(
+                      maskedDestination:
+                          _emailController.text.isEmpty ? '***@example.com' : _emailController.text,
+                    ),
+                  ),
+                );
               } else {
-                // Handle sign up
+                // Example: offer biometric enrollment after successful sign‑up
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const BiometricEnrollmentScreen(),
+                  ),
+                );
               }
             },
           ),
+          if (_isLogin) ...[
+            const SizedBox(height: 12),
+            Center(
+              child: TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const BiometricPromptScreen(
+                        reason: 'Quickly unlock your account using biometrics.',
+                      ),
+                    ),
+                  );
+                },
+                child: const Text(
+                  'Use biometric login instead',
+                  style: TextStyle(
+                    color: Color(0xFFB8A06A),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ),
+          ],
           const SizedBox(height: 24),
           const SocialDivider(),
           const SizedBox(height: 24),
-          const SocialButtons(),
+          SocialButtons(
+            onGooglePressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const OAuthSignInScreen(),
+                ),
+              );
+            },
+            onApplePressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const OAuthSignInScreen(),
+                ),
+              );
+            },
+          ),
           const SizedBox(height: 40),
         ],
       ),

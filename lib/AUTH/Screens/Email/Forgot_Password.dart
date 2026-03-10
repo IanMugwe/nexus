@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nexus/AUTH/Screens/Common/auth_widgets.dart';
-import 'package:nexus/AUTH/Screens/Email/New_Password.dart';
+import 'package:nexus/AUTH/Screens/Email/Reset_Password.dart';
 
 
 class ForgotPasswordPage extends StatefulWidget {
@@ -60,7 +60,14 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                 PrimaryButton(
                   text: 'Continue',
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (_) => const CreateNewPasswordPage(email: '',)));
+                    final email = _emailController.text.trim();
+                    if (email.isEmpty) return;
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => ResetPasswordInfoScreen(email: email),
+                      ),
+                    );
                   },
                 ),
                 const SizedBox(height: 24),

@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "231227130764",
+    "project_id": "firebasics-c21e2",
+    "storage_bucket": "firebasics-c21e2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231227130764:android:2375665e09220cc6f60ca9",
+        "android_client_info": {
+          "package_name": "com.example.flutter_flow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231227130764-juj8879sknu8qvc5rkeuvrpfu83ef12q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMWUb2T4FZDN6b56jD0bPSde_dmJ50bnA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231227130764-juj8879sknu8qvc5rkeuvrpfu83ef12q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "231227130764-eon6kabrnj70e32ofpj41vgqoh2o55df.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterFlow"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231227130764:android:7d8adc54c4ffe6fef60ca9",
+        "android_client_info": {
+          "package_name": "com.example.nexus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231227130764-juj8879sknu8qvc5rkeuvrpfu83ef12q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMWUb2T4FZDN6b56jD0bPSde_dmJ50bnA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231227130764-juj8879sknu8qvc5rkeuvrpfu83ef12q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "231227130764-eon6kabrnj70e32ofpj41vgqoh2o55df.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterFlow"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

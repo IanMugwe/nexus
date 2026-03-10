@@ -233,7 +233,14 @@ class SocialDivider extends StatelessWidget {
 }
 
 class SocialButtons extends StatelessWidget {
-  const SocialButtons({super.key});
+  final VoidCallback? onGooglePressed;
+  final VoidCallback? onApplePressed;
+
+  const SocialButtons({
+    super.key,
+    this.onGooglePressed,
+    this.onApplePressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -243,9 +250,7 @@ class SocialButtons extends StatelessWidget {
           child: _SocialButton(
             icon: 'assets/google_icon.png', // Add Google icon
             label: 'Google',
-            onPressed: () {
-              // Handle Google sign in
-            },
+            onPressed: onGooglePressed ?? () {},
           ),
         ),
         const SizedBox(width: 16),
@@ -253,9 +258,7 @@ class SocialButtons extends StatelessWidget {
           child: _SocialButton(
             icon: 'assets/apple_icon.png', // Add Apple icon
             label: 'Apple',
-            onPressed: () {
-              // Handle Apple sign in
-            },
+            onPressed: onApplePressed ?? () {},
           ),
         ),
       ],
